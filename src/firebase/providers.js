@@ -101,3 +101,8 @@ export const LoginWithEmailPassword = async ({ email, password }) => {
 		};
 	}
 };
+
+export const logoutFirebase = async () => {
+	// aquí lo hace es cerrar cualquier sección abierta
+	return await FirebaseAuth.signOut();
+};

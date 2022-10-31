@@ -13,13 +13,14 @@ import {
 	ListItemText,
 } from '@mui/material';
 import { PropTypes } from 'prop-types';
+import { useSelector } from 'react-redux';
 
 export const Sidebar = ({ drawerWidth }) => {
 	// flexShrink: 0 -> para que no se achique
 	// open -> para que se muestre
 	// '& .MuiDrawer-paper' -> para que se aplique a la clase MuiDrawer-paper
 	// boxSizing: 'border-box', -> para que no se salga del drawer
-
+	const { displayName } = useSelector((state) => state.auth);
 	return (
 		<Box
 			component={'nav'}
@@ -38,7 +39,7 @@ export const Sidebar = ({ drawerWidth }) => {
 			>
 				<Toolbar>
 					<Typography variant='h6' noWrap component={'div'}>
-						Skierhy
+						{displayName}
 					</Typography>
 				</Toolbar>
 				<Divider />

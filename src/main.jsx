@@ -5,6 +5,7 @@ import { store } from './store';
 import { BrowserRouter } from 'react-router-dom';
 import { JournalApp } from './JournalApp';
 import './main.css';
+import 'animate.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>

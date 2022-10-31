@@ -8,7 +8,10 @@ const drawerWidth = 240;
 export const JournalLayout = ({ children }) => {
 	return (
 		// box es como un div
-		<Box sx={{ display: 'flex' }}>
+		<Box
+			sx={{ display: 'flex' }}
+			className='animate__animated animate__fadeIn animate__faster'
+		>
 			{/* Navbar drawerWidth */}
 			<NavBar drawerWidth={drawerWidth} />
 
@@ -26,5 +29,5 @@ export const JournalLayout = ({ children }) => {
 };
 
 JournalLayout.propTypes = {
-	children: PropTypes.node.isRequired,
+	children: PropTypes.node,
 };
