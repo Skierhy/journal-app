@@ -15,5 +15,5 @@ export const AppTheme = ({ children }) => {
 };
 
 AppTheme.propTypes = {
-	children: PropsTypes.node.isRequired,
+	children: PropsTypes.node,
 };

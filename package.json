@@ -11,20 +11,26 @@
 		"lint": "eslint --fix . --ext .js,.ts,.jsx,.tsx"
 	},
 	"dependencies": {
+		"@babel/core": "^7.0.0-0",
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
 		"@mui/icons-material": "^5.10.9",
 		"@mui/material": "^5.10.9",
+		"@reduxjs/toolkit": "^1.8.6",
+		"animate.css": "^4.1.1",
 		"eslint": "^8.0.1",
 		"eslint-config-prettier": "^8.5.0",
+		"firebase": "^9.12.1",
 		"localforage": "^1.10.0",
 		"match-sorter": "^6.3.1",
 		"prettier": "^2.7.1",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-redux": "^8.0.4",
 		"react-router-dom": "^6.4.2",
-		"sort-by": "^1.2.0"
+		"sort-by": "^1.2.0",
+		"sweetalert2": "^11.6.5"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.17",
