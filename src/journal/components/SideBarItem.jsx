@@ -8,23 +8,27 @@ import {
 	ListItemText,
 } from '@mui/material';
 import { useMemo } from 'react';
+import { useDispatch } from 'react-redux';
+import { setActiveNote } from '../../store/journal/journalSlice';
 
-export const SideBarItem = ({ note = {} }) => {
+export const SideBarItem = ({ title, body, id, date, imageUrls = [] }) => {
+	const dispatch = useDispatch();
 	const newTitle = useMemo(() => {
-		return note.title.length > 17
-			? note.title.substring(0, 17) + '...'
-			: note.title;
-	}, [note]);
+		return title.length > 17 ? title.substring(0, 17) + '...' : title;
+	}, [title]);
+	const onClickNote = () => {
+		dispatch(setActiveNote({ title, body, id, date, imageUrls }));
+	};
 	return (
 		<>
 			<ListItem disablePadding>
-				<ListItemButton>
+				<ListItemButton onClick={onClickNote}>
 					<ListItemIcon>
 						<TurnedInNot />
 					</ListItemIcon>
 					<Grid container>
 						<ListItemText primary={newTitle} />
-						<ListItemText secondary={note.body} />
+						<ListItemText secondary={body} />
 					</Grid>
 				</ListItemButton>
 			</ListItem>
@@ -35,5 +39,9 @@ export const SideBarItem = ({ note = {} }) => {
 // props
 
 SideBarItem.propTypes = {
-	note: PropTypes.object.isRequired,
+	title: PropTypes.string.isRequired,
+	body: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	date: PropTypes.number.isRequired,
+	imageUrls: PropTypes.array,
 };
