@@ -1,3 +1,5 @@
+# no dar seguimiento a .env
+# .env
 # Logs
 logs
 *.log

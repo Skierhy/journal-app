@@ -39,6 +39,7 @@ export const LoginPage = () => {
 	return (
 		<AuthLayout title='Login'>
 			<form
+				aria-label='submit-form'
 				onSubmit={onSubmit}
 				className='animate__animated animate__fadeIn animate__faster'
 			>
@@ -63,6 +64,12 @@ export const LoginPage = () => {
 							name='password'
 							value={password}
 							onChange={onInputChange}
+							// pasar por referencia a jest
+							// inputprops es un objeto que se le pasa a un input
+							// sirve para pasarle atributos a un input
+							// data-testid es un atributo que se le pasa a un input
+							// para poder hacer pruebas con jest
+							inputProps={{ 'data-testid': 'password' }}
 						/>
 					</Grid>
 					{err ? (
@@ -89,6 +96,7 @@ export const LoginPage = () => {
 								fullWidth
 								onClick={onGoogleSignIn}
 								disabled={isAuthenticating}
+								aria-label='google-btn'
 							>
 								<Google />
 								<Typography sx={{ ml: 1 }}>Google</Typography>

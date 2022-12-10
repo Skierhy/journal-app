@@ -14,7 +14,7 @@ const initialState = {
 	// }
 };
 
-const journalSlice = createSlice({
+export const journalSlice = createSlice({
 	name: 'journal',
 	initialState,
 	reducers: {

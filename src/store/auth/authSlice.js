@@ -10,7 +10,7 @@ const initialState = {
 	errorMessage: null, // mensaje de error
 };
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
